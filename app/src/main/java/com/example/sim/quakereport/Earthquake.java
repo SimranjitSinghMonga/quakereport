@@ -4,17 +4,19 @@ package com.example.sim.quakereport;
  * Created by Sim on 08/03/2018.
  */
 public class Earthquake {
-    private String mMagnitude;
+    private double mMagnitude;
     private String mLocation;
     private long mTimeInMilliSeconds;
+    private String mUrl;
 
-    public Earthquake(String magnitude,String location,long timeInMilliSeconds)
+    public Earthquake(double magnitude,String location,long timeInMilliSeconds,String url)
     {
       mMagnitude=magnitude;
         mLocation=location;
         mTimeInMilliSeconds=timeInMilliSeconds;
+        mUrl=url;
     }
-    public String getMagnitude()
+    public double getMagnitude()
     {
         return mMagnitude;
     }
@@ -25,5 +27,9 @@ public class Earthquake {
     public long getTimeInMilliSeconds()
     {
         return mTimeInMilliSeconds;
+    }
+    public String getUrl()
+    {
+        return mUrl;
     }
 }
