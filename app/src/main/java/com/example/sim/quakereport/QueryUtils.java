@@ -72,7 +72,7 @@ public final class QueryUtils {
                 String location = properties.getString("place");
 
                 // Extract the value for the key called "time"
-                String time = properties.getString("time");
+                long time = properties.getLong("time");
 
                 // Extract the value for the key called "url"
                 String url = properties.getString("url");

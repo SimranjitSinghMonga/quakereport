@@ -6,13 +6,13 @@ package com.example.sim.quakereport;
 public class Earthquake {
     private String mMagnitude;
     private String mLocation;
-    private String mDate;
+    private long mTimeInMilliSeconds;
 
-    public Earthquake(String magnitude,String location,String date)
+    public Earthquake(String magnitude,String location,long timeInMilliSeconds)
     {
       mMagnitude=magnitude;
         mLocation=location;
-        mDate=date;
+        mTimeInMilliSeconds=timeInMilliSeconds;
     }
     public String getMagnitude()
     {
@@ -22,8 +22,8 @@ public class Earthquake {
     {
         return mLocation;
     }
-    public String getDate()
+    public long getTimeInMilliSeconds()
     {
-        return mDate;
+        return mTimeInMilliSeconds;
     }
 }

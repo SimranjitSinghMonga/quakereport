@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,9 +37,27 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake>
         TextView locationView=(TextView)listItemView.findViewById(R.id.location);
         locationView.setText(currentEarthquake.getLocation());
 
+        Date dateObject=new Date(currentEarthquake.getTimeInMilliSeconds());
+
         TextView dateView=(TextView)listItemView.findViewById(R.id.date);
-        dateView.setText(currentEarthquake.getDate());
+        String formatDate=formatDate(dateObject);
+        dateView.setText(formatDate);
+
+        TextView timeView=(TextView)listItemView.findViewById(R.id.time);
+        String formatTime=formatTime(dateObject);
+        timeView.setText(formatTime);
+
 
         return listItemView;
+    }
+    public String formatDate(Date dateObject)
+    {
+  SimpleDateFormat dateFormat=new SimpleDateFormat("LLL dd,yyyy");
+        return dateFormat.format(dateObject);
+    }
+    public String formatTime(Date dateObject)
+    {
+        SimpleDateFormat timeFormat=new SimpleDateFormat("h:mm a");
+        return timeFormat.format(dateObject);
     }
 }
